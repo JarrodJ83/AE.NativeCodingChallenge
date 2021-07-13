@@ -353,5 +353,20 @@ namespace ChallengeTest
             foreach (var pair in BlobIO.ToBlobList(bio))
                 Assert.Equal(--ix, pair.Key);
         }
+
+        [Fact]
+        public void IOEx_Blog_With_UTF8_Friendly_Text_Exported_To_Another_Blob_Have_Same_Friendly()
+        {
+            var utf8FriendlyText = "初めまして";
+
+            BlobIO utf8friendlyBlob = null;
+            utf8friendlyBlob += utf8FriendlyText;
+
+            byte[] exportedBlobIO = BlobIO.ExportBlobList(utf8friendlyBlob);
+
+            BlobIO blobFromExportedIO = new BlobIO(exportedBlobIO);
+
+            Assert.Equal(utf8friendlyBlob.Friendly, blobFromExportedIO.Friendly);
+        }
     }
 }
