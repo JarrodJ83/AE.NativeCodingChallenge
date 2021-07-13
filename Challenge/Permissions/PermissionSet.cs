@@ -12,7 +12,7 @@ namespace AE.Permissions
         public IReadOnlyList<string> Permissions { get; }
         public PermissionSet(List<string> permissions)
         {
-            Permissions = new ReadOnlyCollection<string>(permissions);
+            Permissions = new HashSet<string>(permissions);
         }
 
         public byte[] Serialize()
