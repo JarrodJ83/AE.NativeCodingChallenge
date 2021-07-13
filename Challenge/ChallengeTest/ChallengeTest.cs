@@ -368,5 +368,22 @@ namespace ChallengeTest
 
             Assert.Equal(utf8friendlyBlob.Friendly, blobFromExportedIO.Friendly);
         }
+
+        [Fact]
+        public void PermissionSet_Is_Serializable()
+        {
+            var permissionCount = 100;
+            var permissions = Enumerable.Range(0, permissionCount).Select(i => $"Perm{i}").ToList();
+            Assert.Equal(permissions.Count, permissionCount);
+
+            var permissionSet = new AE.Permissions.PermissionSet(permissions);
+
+            var binarySerializedPermissionSet = permissionSet.Serialize();
+            Assert.NotEmpty(binarySerializedPermissionSet);
+
+            var deserializedPermissionSet = AE.Permissions.PermissionSet.Deserialize(binarySerializedPermissionSet);
+
+            Assert.Equal(permissionSet, deserializedPermissionSet);
+        }
     }
 }

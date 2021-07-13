@@ -16,7 +16,7 @@
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <TargetLanguage>CS</TargetLanguage>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <SqlServerVerification>False</SqlServerVerification>
@@ -60,6 +60,7 @@
     <Folder Include="Core" />
     <Folder Include="Interfaces" />
     <Folder Include="Extensions" />
+    <Folder Include="Permissions" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\BigBitBlob.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Extensions\StringEx.cs" />
     <Compile Include="Extensions\NumberEx.cs" />
     <Compile Include="Extensions\EnumEx.cs" />
+    <Compile Include="Permissions\PermissionSet.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Xml" />
