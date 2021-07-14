@@ -20,6 +20,17 @@
 
    - Concept or element that was unfamiliar or unexpected
 
+      - SQL project threw mew off at first. Haven't used one in quite a long time and mainly used it for schema.
+      - All the manual binary serialization code was unexpected. This is the first time I have seen anyone leverage SQL CLR to run c# on SQL Server in practice.
+
    - Constructive review or recommended improvement
 
+      - I like that the challenge had you track down a bug and fix it.
+      - I appreciate the transparency in using code from your actual system!
+      - Would be great to explain a bit more how this library is called from application layer to give a bit more context
+
    - Opportunity or future enhancement
+
+      - Adding docker support and a way to leverage this in SQL so that you can see it in action would be really cool!
+
+      
